@@ -29,3 +29,14 @@ model User {
   password  String
   cartData  Json?   @default("{}") // Guardamos como JSON en lugar de Object
 }
+
+model Order {
+  id       Int      @id @default(autoincrement())
+  userId   String
+  items    Json
+  amount   Float
+  address  Json
+  status   String   @default("Food Processing")
+  date     DateTime @default(now())
+  payment  Boolean  @default(false) 
+}
