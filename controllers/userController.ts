@@ -5,6 +5,7 @@ import bcrypt from "bcrypt";
 import validator from "validator";
 
 //login user
+// login user
 export const loginUser = async (req: Request, res: Response) => {
   const { email, password } = req.body;
   try {
@@ -21,7 +22,10 @@ export const loginUser = async (req: Request, res: Response) => {
     }
 
     const token = createToken(user.id);
-    res.json({ success: true, token });
+
+    // Devuelve el userId junto con el token
+    res.json({ success: true, token, userId: user.id });  // Aquí está la modificación
+
   } catch (error) {
     console.log(error);
     res.json({ success: false, message: "Error" });
