@@ -32,11 +32,11 @@ model User {
 
 model Order {
   id       Int      @id @default(autoincrement())
-  userId   String
+  userId   Int
   items    Json
   amount   Float
   address  Json
   status   String   @default("Food Processing")
   date     DateTime @default(now())
-  payment  Boolean  @default(false) 
+  payment  Boolean  @default(false)
 }
