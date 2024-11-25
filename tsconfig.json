@@ -3,17 +3,21 @@
     "target": "ES6",
     "module": "CommonJS",
     "outDir": "./dist",
-    "rootDir": "./",  // Asume que el código fuente está en "src"
+    "rootDir": "./",           // La raíz del código fuente ahora es `src`
     "strict": true,
     "esModuleInterop": true,
     "types": ["node", "vitest"]
   },
   "include": [
-    "src/**/*.ts",
+    "src/**/*.ts",               // Incluye todo dentro de `src`
+    "config/**/*.ts",
     "controllers/**/*.ts",
+    "middleware/**/*.ts",
     "models/**/*.ts",
+    "prisma/**/*.ts",
     "routes/**/*.ts",
-    "config/**/*.ts"
+    "uploads/**/*.ts",
+    "test/**/*.ts"
   ],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "dist"]
 }
